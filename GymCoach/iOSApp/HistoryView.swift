@@ -39,7 +39,7 @@ private struct SessionRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text(CricketPlan.day(id: session.dayID)?.displayName ?? "Day \(session.dayID)")
+            Text(CricketPlan.day(id: session.dayID)?.displayName ?? "Workout \(session.dayID)")
                 .font(.headline)
             Text("\(session.startedAt.formatted(date: .abbreviated, time: .shortened)) · \(session.phase.title)")
                 .font(.caption)

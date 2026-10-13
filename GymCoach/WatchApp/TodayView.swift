@@ -67,7 +67,7 @@ private struct DayRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text("Day \(day.id) · \(day.usualDay)")
+            Text(day.usualDay)
                 .font(.caption2)
                 .foregroundStyle(.secondary)
             Text(day.title)

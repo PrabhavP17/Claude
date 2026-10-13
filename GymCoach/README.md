@@ -7,7 +7,7 @@ Open it at the gym and your watch shows today's workout, the current training ph
 ## Features
 
 **Apple Watch**
-- Opens on today's session: Mon A (lower body), Tue B (upper body), Thu D (full body), Fri C (speed and conditioning)
+- Opens on today's session: Monday (lower body), Tuesday (upper body), Thursday (full body), Friday (speed and conditioning)
 - Knows the phase from the date: Foundation, Strength, Deload or Power. Sets and reps change to match.
 - Rest timer with haptics, sized to the phase (90–120 s for main lifts)
 - Set the weight with the Digital Crown or the − / + buttons

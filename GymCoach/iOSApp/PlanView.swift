@@ -65,7 +65,7 @@ private struct DaySummaryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            Text("Day \(day.id) · \(day.usualDay)")
+            Text(day.usualDay)
                 .font(.caption)
                 .foregroundStyle(.secondary)
             Text(day.title)
@@ -104,6 +104,6 @@ struct DayDetailView: View {
                 ForEach(day.cooldown, id: \.self) { Text($0) }
             }
         }
-        .navigationTitle("Day \(day.id)")
+        .navigationTitle(day.usualDay)
     }
 }

@@ -1,6 +1,7 @@
 import Foundation
 
-/// The 4-day cricket strength plan: Mon A, Tue B, Thu D, Fri C.
+/// The 4-day cricket strength plan: Monday, Tuesday, Thursday and Friday.
+/// Each day keeps a short internal id (A–D) that is stored with logged sessions.
 public enum CricketPlan {
     public static let days: [WorkoutDay] = [dayA, dayB, dayD, dayC]
 

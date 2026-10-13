@@ -114,5 +114,5 @@ public struct WorkoutDay: Identifiable, Hashable, Sendable {
         self.cooldown = cooldown
     }
 
-    public var displayName: String { "Day \(id): \(title)" }
+    public var displayName: String { "\(usualDay): \(title)" }
 }
