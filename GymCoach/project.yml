@@ -1,0 +1,70 @@
+# Generates GymCoach.xcodeproj. On your Mac:
+#   brew install xcodegen
+#   xcodegen generate
+name: GymCoach
+
+options:
+  bundleIdPrefix: com.prabhav
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    CODE_SIGN_STYLE: Automatic
+    # Set your team in Xcode (Signing & Capabilities), or put your Team ID here.
+    DEVELOPMENT_TEAM: ""
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+packages:
+  GymCoachKit:
+    path: Packages/GymCoachKit
+
+targets:
+  GymCoach:
+    type: application
+    platform: iOS
+    sources:
+      - iOSApp
+      - Shared
+    dependencies:
+      - package: GymCoachKit
+      - target: GymCoachWatch
+    info:
+      path: iOSApp/Info.plist
+      properties:
+        CFBundleDisplayName: Gym Coach
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.prabhav.gymcoach
+
+  GymCoachWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - WatchApp
+      - Shared
+    dependencies:
+      - package: GymCoachKit
+    info:
+      path: WatchApp/Info.plist
+      properties:
+        CFBundleDisplayName: Gym Coach
+        WKApplication: true
+        WKCompanionAppBundleIdentifier: com.prabhav.gymcoach
+        WKRunsIndependentlyOfCompanionApp: true
+        WKBackgroundModes: [workout-processing]
+        NSHealthShareUsageDescription: Gym Coach reads your heart rate and calories during workouts.
+        NSHealthUpdateUsageDescription: Gym Coach saves your workouts to Apple Health.
+    entitlements:
+      path: WatchApp/GymCoachWatch.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.developer.healthkit.access: []
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.prabhav.gymcoach.watchkitapp
